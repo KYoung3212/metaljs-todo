@@ -1,4 +1,8 @@
 'use strict';
+// Overrides header and footer
+
+// The TodoApp component will be the root level component. It will handle storing the todo data, and the rendering of the other two components.
+
 
 import JSXComponent from 'metal-jsx';
 
