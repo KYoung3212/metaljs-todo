@@ -2,6 +2,10 @@
 
 import JSXComponent from 'metal-jsx';
 
+
+// Preparing the TodoItem for consuming the data passed fromTodoApp:
+
+
 class TodoItem extends JSXComponent {
 	render() {
 		let elementClasses = `todo-item${this.props.todo.done ? ' todo-item-done' : ''}`;
