@@ -2,6 +2,9 @@
 
 import JSXComponent from 'metal-jsx';
 
+// Preparing the TodoItem for consuming the data passed fromTodoApp:
+
+
 class TodoItem extends JSXComponent {
 	render() {
 		return (
