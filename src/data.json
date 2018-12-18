@@ -1,0 +1,16 @@
+{
+    "tasks":[
+        {
+            "title": "Apply for job",
+            "complete": false
+        },
+        {
+            "title": "Get interview",
+            "complete": false
+        },
+        {
+            "title":  "Get offer",
+            "complete": false
+        }
+    ]
+}
