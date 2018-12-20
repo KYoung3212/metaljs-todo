@@ -23,6 +23,19 @@ class TodoApp extends JSXComponent {
 			// Connected to the TodoItem Emit function, which gives us access to the index of the specific todo item.
 			this.toggleTodo(e.todo);
 		}
+
+			// Deleting of Todos
+	handleDelete(e) {
+		e.stopPropagation();
+		let index = this.state.todos.indexOf(e.index);
+		let allTodos = [...this.state.todos];
+		allTodos.splice(index, 1);
+		this.state.todos = allTodos;
+	}
+
+	deleteCompleted(){
+		this.state.todos = this.filterTodos(false);
+	}
 		
 	render() {
 		return (
