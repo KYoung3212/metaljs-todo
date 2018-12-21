@@ -48,5 +48,16 @@ class TodoApp extends JSXComponent {
 	}
 }
 
+TodoApp.STATE = {
+	todos: {
+		value: JSONData.tasks
+	},
+	input: '',
+	searchbarFilter: false,
+	// All todos are set to incomplete (false) when first entered
+	filtered: false,
+	filterType: false
+}
+
 export {TodoApp}
 export default TodoApp;
