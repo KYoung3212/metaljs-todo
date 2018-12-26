@@ -6,6 +6,20 @@ import JSXComponent from 'metal-jsx';
 
 
 class TodoForm extends JSXComponent {
+
+	handleInputChange(e) {
+		this.state.value = e.target.value; //gets the current todo
+	}
+	
+	handleSubmit(e) {
+		e.preventDefault();
+		if (this.state.value) {
+			this.emit('addTodoItem', {
+				value: this.state.value
+			})
+		}
+		this.state.value = ''; //clears input value
+	}
 	render() {
 		return (
 			<form class="todo-form">
