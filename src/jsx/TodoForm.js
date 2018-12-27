@@ -20,6 +20,17 @@ class TodoForm extends JSXComponent {
 		}
 		this.state.value = ''; //clears input value
 	}
+
+
+	handleAdd(){
+		if(this.state.value){
+			this.emit('addTodoItem', {
+				value: this.state.value
+			})
+		}	
+		this.state.value = ''; //clears input value
+	}
+	
 	render() {
 		return (
 			<form class="todo-form">
