@@ -30,7 +30,7 @@ class TodoForm extends JSXComponent {
 		}	
 		this.state.value = ''; //clears input value
 	}
-	
+
 	render() {
 		return (
 			<form class="todo-form">
@@ -43,6 +43,12 @@ class TodoForm extends JSXComponent {
 				<button type="submit">Add</button>
 			</form>
 		);
+	}
+}
+
+TodoForm.STATE = {
+	value: {
+		value: ''
 	}
 }
 
