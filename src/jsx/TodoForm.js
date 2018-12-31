@@ -11,6 +11,7 @@ class TodoForm extends JSXComponent {
 		this.state.value = e.target.value; //gets the current todo
 	}
 	
+// Triggered on click of submit
 	handleSubmit(e) {
 		e.preventDefault();
 		if (this.state.value) {
@@ -21,7 +22,7 @@ class TodoForm extends JSXComponent {
 		this.state.value = ''; //clears input value
 	}
 
-
+// Triggered after click of submit
 	handleAdd(){
 		if(this.state.value){
 			this.emit('addTodoItem', {
@@ -46,6 +47,7 @@ class TodoForm extends JSXComponent {
 	}
 }
 
+// Value State will be updated once form is submitted 
 TodoForm.STATE = {
 	value: {
 		value: ''
