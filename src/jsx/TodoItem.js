@@ -21,12 +21,18 @@ class TodoItem extends JSXComponent {
 		})
 	}
 	render() {
+		const completeOrNot = `todo-item${this.props.todo.complete ? ' todo-item-complete' : ''}`
 		return (
-			<li
-				class="todo-item"
-			>
-				[TODO]
-			</li>
+			<div>
+				<li class={completeOrNot} data-onclick={this.handleClick.bind(this)}>
+					{this.props.todo.title}
+					<span>
+						<button class="deleteButton" data-onclick={this.deleteItem.bind(this)}>X</button>
+					</span>
+				</li>	
+			</div>
+
+			
 		);
 	}
 }
