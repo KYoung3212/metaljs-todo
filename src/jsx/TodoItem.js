@@ -6,6 +6,20 @@ import JSXComponent from 'metal-jsx';
 
 
 class TodoItem extends JSXComponent {
+	handleClick(e){
+		// Notifies the TodoApp component that a todo item was completed
+		this.emit('todoClicked', {
+			todo: this.props.todo
+		})
+	}
+
+	deleteItem(e){
+		let stopPropagation = e.stopPropagation.bind(e);
+		this.emit('deleteTodo', {
+			index: this.props.todo,
+			stopPropagation 
+		})
+	}
 	render() {
 		return (
 			<li
