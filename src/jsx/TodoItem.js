@@ -37,5 +37,14 @@ class TodoItem extends JSXComponent {
 	}
 }
 
+TodoItem.PROPS = {
+	item: {
+		value: null
+	},
+	index: {
+		value: null
+	}
+}
+
 export {TodoItem}
 export default TodoItem;
