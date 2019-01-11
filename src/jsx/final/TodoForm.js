@@ -7,6 +7,23 @@ import JSXComponent from 'metal-jsx';
 
 
 class TodoForm extends JSXComponent {
+
+		handleSubmit(event) {
+		event.preventDefault();
+
+		if (this.state.value) {
+			this.emit('todoAdd', {
+				title: this.state.value
+			});
+
+			this.state.value = '';
+		}
+	}
+
+	handleChange(event) {
+		this.state.value = event.target.value;
+	}
+
 	render() {
 		return (
 			<form class="todo-form" data-onsubmit={this.handleSubmit.bind(this)}>
@@ -23,21 +40,6 @@ class TodoForm extends JSXComponent {
 		);
 	}
 
-	handleSubmit(event) {
-		event.preventDefault();
-
-		if (this.state.value) {
-			this.emit('todoAdd', {
-				title: this.state.value
-			});
-
-			this.state.value = '';
-		}
-	}
-
-	handleChange(event) {
-		this.state.value = event.target.value;
-	}
 }
 
 TodoForm.STATE = {
